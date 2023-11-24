@@ -90,4 +90,64 @@ fmt：go语言默认包含的标准库包，format缩写
 
 ### What's that 'func' thing?
 
+函数
+
+```go
+func funcName() {
+    // func code
+}
+```
+
+
+
 #### How is the main.go file organized?
+
+- 包声明
+- 导包 we need
+- 声明函数 tell Go to do things
+
+## Real first project
+
+> Cards 模拟扑克
+>
+> - newDeck 新牌
+> - print 打印所有牌
+> - shuttle 洗牌
+> - deal 手牌
+> - saveToFile 保存到本地
+> - newDeckFromFile 从本地加载
+
+## Variable Declarations
+
+```go
+var varName varType = varValue
+var identifier1, identifier2 type = value1, value2
+```
+
+**Basic Go Types**
+
+- bool
+- string
+- int
+- float64/float32
+
+new version can do
+
+```go
+var a = 1 	// 自动识别
+var b := 2	// 简短声明
+```
+
+## Function and Return Types
+
+```go
+func main() {
+	card := newCard()
+	fmt.Println(card)
+}
+
+func newCard() string {
+	return "Five of Diamonds"
+}
+```
+
