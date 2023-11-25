@@ -151,3 +151,66 @@ func newCard() string {
 }
 ```
 
+## Array & Slice
+
+Array: Fixed length list of things
+
+Slice: An array that can grow or shrink. Every element in a slice must be of same type
+
+```go
+// 声明一个未指定大小的数组来定义切片
+var identifier []type
+// 切片不需要说明长度。
+// 或使用 make() 函数来创建切片:
+var slice1 []type = make([]type, len)
+// 也可以简写为
+slice1 := make([]type, len)
+```
+
+```go
+func main() {
+	cards := []string{"Ace of Diamonds", newCard()}
+	fmt.Println(cards)
+	cards = append(cards, "Five of Spades")
+	fmt.Println(cards)
+}
+
+// [Ace of Diamonds Five of Diamonds]
+// [Ace of Diamonds Five of Diamonds Five of Spades]
+```
+
+### For loop
+
+```go
+for i, card := range cards {
+		fmt.Println(i, card)
+	}
+
+// 0 Ace of Diamonds
+// 1 Five of Diamonds
+// 2 Five of Spades
+```
+
+## OO Approach vs Go Approach
+
+Go不是一种面向对象的编程语言，没有类的概念
+
+**Base Go Types**
+
+- string
+- integer
+- float
+- array
+- map
+
+“Extent ” a base type and add some extra functionality to it
+
+→ type deck []sring (create an array of strings and add a bunch of functions specifically made to work with it)
+
+→ Functions with ‘deck’ as a receiver
+
+### ‘cards’ folder
+
+- main.go
+- deck.go
+- deck_test.go
